@@ -40,8 +40,8 @@ curMin
 
 % This uses a nested for loop and a function to sort an array and graphs
 % the time it takes for each
-%{
-DataSize = 2500;
+
+DataSize = 1000;
 
 loopTimeArray = [];
 functionTimeArray = [];
@@ -113,9 +113,9 @@ plot(arrayLengthArray,functionTimeArray,arrayLengthArray,loopTimeArray)
 legend('Function Sort', 'Loop Sort', 'location','northwest')
 xlabel('Array Size')
 ylabel('Time to Sort')
-ylim([0,0.08])
+ylim([0,0.01])
 
-%}
+
 
 % round(num)
 % ceil(num)
