@@ -1,0 +1,383 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>homework1</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-03-20"><meta name="DC.source" content="homework1.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Chapter 1 #8</a></li><li><a href="#3">Chapter 1 #9</a></li><li><a href="#4">Chapter 1 #10</a></li><li><a href="#5">Chapter 1 #11</a></li><li><a href="#6">Chapter 1 #12</a></li><li><a href="#7">Chapter 1 #14</a></li><li><a href="#8">Chapter 1 #15</a></li><li><a href="#9">Chapter 1 #16</a></li><li><a href="#10">Chapter 1 #17</a></li><li><a href="#11">Chapter 2 #10</a></li><li><a href="#12">Chapter 2 #11</a></li><li><a href="#13">Chapter 2 #12</a></li></ul></div><pre class="codeinput">clear <span class="string">all</span>
+clc
+</pre><h2 id="2">Chapter 1 #8</h2><pre class="codeinput">b = 10;
+h = 12;
+
+a = 0.5 * b * h;
+
+fprintf(<span class="string">'\nThe area of a triangle with base %g and height %g is %g\n'</span>,b, h, a)
+</pre><pre class="codeoutput">
+The area of a triangle with base 10 and height 12 is 60
+</pre><h2 id="3">Chapter 1 #9</h2><pre class="codeinput">r = 5;
+h = 3;
+
+sa = (2*pi*r*h) + (2*pi*r^2);
+v = pi*h*r^2;
+
+fprintf(<span class="string">'\nA cylinder with radius %g and height %g has a surface area of %g and a volume of %g\n'</span>,r, h, sa, v)
+</pre><pre class="codeoutput">
+A cylinder with radius 5 and height 3 has a surface area of 251.327 and a volume of 235.619
+</pre><h2 id="4">Chapter 1 #10</h2><pre class="codeinput">p1x = 3;
+p1y = 4;
+p2x = 5;
+p2y = 9;
+
+slope = (p2y - p1y)/(p2x-p1x);
+
+fprintf(<span class="string">'\nThe slope between the point (%g, %g) and (%g, %g) is %g\n'</span>, p1x, p1y, p2x, p2y, slope)
+</pre><pre class="codeoutput">
+The slope between the point (3, 4) and (5, 9) is 2.5
+</pre><h2 id="5">Chapter 1 #11</h2><pre class="codeinput">distance = sqrt((p2x-p1x)^2 + (p2y-p1y)^2);
+
+fprintf(<span class="string">'\nThe distance between the point (%g, %g) and (%g, %g) is %g\n'</span>, p1x, p1y, p2x, p2y, distance)
+</pre><pre class="codeoutput">
+The distance between the point (3, 4) and (5, 9) is 5.38516
+</pre><h2 id="6">Chapter 1 #12</h2><pre class="codeinput">facto = factorial(6);
+
+
+fprintf(<span class="string">'\n6! is %g\n'</span>,facto)
+</pre><pre class="codeoutput">
+6! is 720
+</pre><h2 id="7">Chapter 1 #14</h2><pre class="codeinput">format <span class="string">long</span>
+
+k = 0;
+piApprox1 = (factorial(4*k)*(1103+(26390*k)))/((factorial(k)^2)*396^(4*k));
+
+piApprox1Final = ((2*sqrt(2))/(9801))*piApprox1;
+
+
+k = 1;
+
+piApprox2 = (factorial(4*k)*(1103+(26390*k)))/((factorial(k)^2)*396^(4*k));
+
+piApprox2Final = ((2*sqrt(2))/(9801))*(piApprox1+piApprox2);
+
+realPi = 1/pi
+
+<span class="comment">%Although I set the format to be long, it does not change the number of</span>
+<span class="comment">%decimal places fprintf displays so I manually changed the fprinf statement</span>
+<span class="comment">%to display the correct number of decimal places.</span>
+fprintf(<span class="string">'\nWhen N = 0, the approximation of 1/pi = %.15f, when N = 1, the approximation for 1/pi is %.15f, \nwhich compared to %.15f, N = 1 is a much better approximation.\n'</span>,piApprox1Final, piApprox2Final, realPi)
+
+
+
+format <span class="string">short</span>
+</pre><pre class="codeoutput">
+realPi =
+
+   0.318309886183791
+
+
+When N = 0, the approximation of 1/pi = 0.318309878440470, when N = 1, the approximation for 1/pi is 0.318309886183791, 
+which compared to 0.318309886183791, N = 1 is a much better approximation.
+</pre><h2 id="8">Chapter 1 #15</h2><pre class="codeinput">x = 2;
+hypeSin = (exp(x) - exp(-1*x))/(2);
+
+fprintf(<span class="string">'\nUsing exponetials to find sinh(%g) yields %g while matlab computes sinh(%g) to be the same (%g)\n'</span>,x, hypeSin, x, sinh(x))
+</pre><pre class="codeoutput">
+Using exponetials to find sinh(2) yields 3.62686 while matlab computes sinh(2) to be the same (3.62686)
+</pre><h2 id="9">Chapter 1 #16</h2><pre class="codeinput">format <span class="string">long</span>
+
+<span class="keyword">for</span> x = [pi pi/2 pi/4 pi/6]
+    theAnswer = sin(x)^2 + cos(x)^2;
+    fprintf(<span class="string">'\nWhen x = %g, sin^2(x) + cos^2(x) = %g'</span>,x, theAnswer)
+<span class="keyword">end</span>
+fprintf(<span class="string">'\n'</span>)
+
+format <span class="string">short</span>
+</pre><pre class="codeoutput">
+When x = 3.14159, sin^2(x) + cos^2(x) = 1
+When x = 1.5708, sin^2(x) + cos^2(x) = 1
+When x = 0.785398, sin^2(x) + cos^2(x) = 1
+When x = 0.523599, sin^2(x) + cos^2(x) = 1
+</pre><h2 id="10">Chapter 1 #17</h2><pre class="codeinput">help <span class="string">sind</span>
+
+fprintf(<span class="string">'\nsin(87 degrees) = %g\n'</span>,sind(87))
+</pre><pre class="codeoutput"> SIND   Sine of argument in degrees.
+    SIND(X) is the sine of the elements of X, expressed in degrees.
+    For integers n, sind(n*180) is exactly zero, whereas sin(n*pi)
+    reflects the accuracy of the floating point value of pi.
+ 
+    Class support for input X:
+       float: double, single
+ 
+    See also ASIND, SIN.
+
+    Reference page in Doc Center
+       doc sind
+
+
+
+sin(87 degrees) = 0.99863
+</pre><h2 id="11">Chapter 2 #10</h2><pre class="codeinput">S = <span class="string">'123'</span>;
+N = str2num(S);
+class(S)
+class(N)
+</pre><pre class="codeoutput">
+ans =
+
+char
+
+
+ans =
+
+double
+
+</pre><h2 id="12">Chapter 2 #11</h2><pre class="codeinput">s1 = <span class="string">'HELLO'</span>
+s2 = <span class="string">'hello'</span>
+strcmp(s1,s2)
+strcmp(lower(s1),s2)
+strcmp(s1,upper(s2))
+</pre><pre class="codeoutput">
+s1 =
+
+HELLO
+
+
+s2 =
+
+hello
+
+
+ans =
+
+  logical
+
+   0
+
+
+ans =
+
+  logical
+
+   1
+
+
+ans =
+
+  logical
+
+   1
+
+</pre><h2 id="13">Chapter 2 #12</h2><pre class="codeinput">str1 = sprintf(<span class="string">'The word ''Engineering'' has 11 letters.'</span>)
+str2 = sprintf(<span class="string">'The word ''book'' has 4 letters.'</span>)
+str3 = sprintf(<span class="string">'The word ''MATLAB'' has 6 letters.'</span>)
+</pre><pre class="codeoutput">
+str1 =
+
+The word 'Engineering' has 11 letters.
+
+
+str2 =
+
+The word 'book' has 4 letters.
+
+
+str3 =
+
+The word 'MATLAB' has 6 letters.
+
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+clear all
+clc
+
+%% Chapter 1 #8
+
+b = 10;
+h = 12;
+
+a = 0.5 * b * h;
+
+fprintf('\nThe area of a triangle with base %g and height %g is %g\n',b, h, a)
+
+%% Chapter 1 #9
+
+r = 5;
+h = 3;
+
+sa = (2*pi*r*h) + (2*pi*r^2);
+v = pi*h*r^2;
+
+fprintf('\nA cylinder with radius %g and height %g has a surface area of %g and a volume of %g\n',r, h, sa, v)
+
+
+%% Chapter 1 #10
+
+p1x = 3;
+p1y = 4;
+p2x = 5;
+p2y = 9;
+
+slope = (p2y - p1y)/(p2x-p1x);
+
+fprintf('\nThe slope between the point (%g, %g) and (%g, %g) is %g\n', p1x, p1y, p2x, p2y, slope)
+
+
+
+%% Chapter 1 #11
+
+distance = sqrt((p2x-p1x)^2 + (p2y-p1y)^2);
+
+fprintf('\nThe distance between the point (%g, %g) and (%g, %g) is %g\n', p1x, p1y, p2x, p2y, distance)
+
+
+%% Chapter 1 #12
+
+facto = factorial(6);
+
+
+fprintf('\n6! is %g\n',facto)
+
+
+
+%% Chapter 1 #14
+
+format long
+
+k = 0;
+piApprox1 = (factorial(4*k)*(1103+(26390*k)))/((factorial(k)^2)*396^(4*k));
+
+piApprox1Final = ((2*sqrt(2))/(9801))*piApprox1;
+
+
+k = 1;
+
+piApprox2 = (factorial(4*k)*(1103+(26390*k)))/((factorial(k)^2)*396^(4*k));
+
+piApprox2Final = ((2*sqrt(2))/(9801))*(piApprox1+piApprox2);
+
+realPi = 1/pi
+
+%Although I set the format to be long, it does not change the number of
+%decimal places fprintf displays so I manually changed the fprinf statement
+%to display the correct number of decimal places. 
+fprintf('\nWhen N = 0, the approximation of 1/pi = %.15f, when N = 1, the approximation for 1/pi is %.15f, \nwhich compared to %.15f, N = 1 is a much better approximation.\n',piApprox1Final, piApprox2Final, realPi)
+
+
+
+format short
+
+
+%% Chapter 1 #15
+
+x = 2;
+hypeSin = (exp(x) - exp(-1*x))/(2);
+
+fprintf('\nUsing exponetials to find sinh(%g) yields %g while matlab computes sinh(%g) to be the same (%g)\n',x, hypeSin, x, sinh(x))
+
+
+%% Chapter 1 #16
+format long
+
+for x = [pi pi/2 pi/4 pi/6]
+    theAnswer = sin(x)^2 + cos(x)^2;
+    fprintf('\nWhen x = %g, sin^2(x) + cos^2(x) = %g',x, theAnswer)
+end
+fprintf('\n')
+
+format short
+
+%% Chapter 1 #17
+
+help sind
+
+fprintf('\nsin(87 degrees) = %g\n',sind(87))
+
+
+%% Chapter 2 #10
+
+S = '123';
+N = str2num(S);
+class(S)
+class(N)
+
+
+%% Chapter 2 #11
+
+s1 = 'HELLO'
+s2 = 'hello'
+strcmp(s1,s2)
+strcmp(lower(s1),s2)
+strcmp(s1,upper(s2))
+
+
+%% Chapter 2 #12
+
+str1 = sprintf('The word ''Engineering'' has 11 letters.')
+str2 = sprintf('The word ''book'' has 4 letters.')
+str3 = sprintf('The word ''MATLAB'' has 6 letters.')
+
+
+
+
+##### SOURCE END #####
+--></body></html>

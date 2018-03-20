@@ -1,0 +1,267 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>homework2</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-03-20"><meta name="DC.source" content="homework2.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Chapter 2 #7</a></li><li><a href="#3">Chapter 2 #32</a></li><li><a href="#4">Chapter 2 #33</a></li><li><a href="#5">Chapter 11 #1</a></li><li><a href="#6">Chapter 11 #3</a></li><li><a href="#7">Other Problems #1</a></li><li><a href="#8">Other Problems #2</a></li><li><a href="#9">Other Problems #3</a></li></ul></div><pre class="codeinput">clear <span class="string">all</span>
+clc
+</pre><h2 id="2">Chapter 2 #7</h2><pre class="codeinput">M = [0 0 0 0 0 1;0 0 0 0 0 1;1 2 3 4 5 1;0 2 4 6 8 1;8 7 2 5 9 1]
+</pre><pre class="codeoutput">
+M =
+
+     0     0     0     0     0     1
+     0     0     0     0     0     1
+     1     2     3     4     5     1
+     0     2     4     6     8     1
+     8     7     2     5     9     1
+
+</pre><h2 id="3">Chapter 2 #32</h2><pre class="codeinput">M = [17:0.06:23];
+size(M)
+</pre><pre class="codeoutput">
+ans =
+
+     1   101
+
+</pre><h2 id="4">Chapter 2 #33</h2><pre class="codeinput">M(1,end)
+</pre><pre class="codeoutput">
+ans =
+
+    23
+
+</pre><h2 id="5">Chapter 11 #1</h2><pre class="codeinput">r = 3;
+<span class="comment">%t = [0:((2*pi)/1000)+1/1000000:2*pi];</span>
+t = linspace(0,2*pi,1000);
+x = r*(t - sin(t));
+y = r*(1 - cos(t));
+
+
+figure(1)
+hold <span class="string">on</span>
+plot(x,y)
+xlabel(<span class="string">'x-axis'</span>)
+ylabel(<span class="string">'y-axis'</span>)
+grid <span class="string">on</span>
+ylim([0,7])
+xlim([-1,20])
+title(<span class="string">'Cycloid'</span>)
+hold <span class="string">off</span>
+</pre><img vspace="5" hspace="5" src="homework2_01.png" alt=""> <h2 id="6">Chapter 11 #3</h2><pre class="codeinput">x = linspace(0,5,1000);
+y1 = 3 + exp(-x) .* sin(6*x);
+y2 = 4 + exp(-x) .* cos(6*x);
+
+figure(2)
+hold <span class="string">on</span>
+plot(x,y1)
+plot(x,y2)
+title(<span class="string">'Two Functions on an Single Axis'</span>)
+xlabel(<span class="string">'x-axis'</span>)
+ylabel(<span class="string">'y-axis'</span>)
+legend(<span class="string">'y1(x)'</span>,<span class="string">'y2(x)'</span>,<span class="string">'location'</span>,<span class="string">'NorthWest'</span>)
+hold <span class="string">off</span>
+</pre><img vspace="5" hspace="5" src="homework2_02.png" alt=""> <h2 id="7">Other Problems #1</h2><pre class="codeinput">syms <span class="string">v</span>
+functionf = 3*v^3 - 7;
+vv = [-2:0.01:2];
+
+yy = subs(functionf,v,vv);
+
+
+figure(3)
+hold <span class="string">on</span>
+title(<span class="string">'Function f(x)'</span>)
+plot(vv,yy,<span class="string">'--r'</span>)
+xlabel(<span class="string">'x-axis'</span>)
+ylabel(<span class="string">'y-axis'</span>)
+hold <span class="string">off</span>
+</pre><img vspace="5" hspace="5" src="homework2_03.png" alt=""> <h2 id="8">Other Problems #2</h2><pre class="codeinput">A = [3 -7 2;2 3 -1;-5 12 10];
+B = [5;11;0];
+
+answer = inv(A)*B;
+
+fprintf(<span class="string">'\nx = %g \ny = %g \nz = %g\n'</span>,answer(1),answer(2),answer(3))
+</pre><pre class="codeoutput">
+x = 4.02589 
+y = 1.18123 
+z = 0.595469
+</pre><h2 id="9">Other Problems #3</h2><pre class="codeinput">A = [1 -3 -1;0 4 1; -1 0 -3];
+B = [-2;7;2];
+
+answer = inv(A)*B;
+
+fprintf(<span class="string">'\nx = %g \ny = %g \nz = %g\n'</span>,answer(1),answer(2),answer(3))
+</pre><pre class="codeoutput">
+x = 2.84615 
+y = 2.15385 
+z = -1.61538
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+clear all
+clc
+
+
+%% Chapter 2 #7
+
+M = [0 0 0 0 0 1;0 0 0 0 0 1;1 2 3 4 5 1;0 2 4 6 8 1;8 7 2 5 9 1]
+
+%%  Chapter 2 #32
+
+M = [17:0.06:23];
+size(M)
+
+%% Chapter 2 #33
+
+M(1,end)
+
+%% Chapter 11 #1
+
+r = 3;
+%t = [0:((2*pi)/1000)+1/1000000:2*pi];
+t = linspace(0,2*pi,1000);
+x = r*(t - sin(t));
+y = r*(1 - cos(t));
+
+
+figure(1)
+hold on
+plot(x,y)
+xlabel('x-axis')
+ylabel('y-axis')
+grid on
+ylim([0,7])
+xlim([-1,20])
+title('Cycloid')
+hold off
+
+%% Chapter 11 #3
+
+x = linspace(0,5,1000);
+y1 = 3 + exp(-x) .* sin(6*x);
+y2 = 4 + exp(-x) .* cos(6*x);
+
+figure(2)
+hold on
+plot(x,y1)
+plot(x,y2)
+title('Two Functions on an Single Axis')
+xlabel('x-axis')
+ylabel('y-axis')
+legend('y1(x)','y2(x)','location','NorthWest')
+hold off
+
+
+%% Other Problems #1
+
+syms v
+functionf = 3*v^3 - 7;
+vv = [-2:0.01:2];
+
+yy = subs(functionf,v,vv);
+
+
+figure(3)
+hold on
+title('Function f(x)')
+plot(vv,yy,'REPLACE_WITH_DASH_DASHr')
+xlabel('x-axis')
+ylabel('y-axis')
+hold off
+
+
+%% Other Problems #2
+
+A = [3 -7 2;2 3 -1;-5 12 10];
+B = [5;11;0];
+
+answer = inv(A)*B;
+
+fprintf('\nx = %g \ny = %g \nz = %g\n',answer(1),answer(2),answer(3))
+
+%% Other Problems #3
+
+A = [1 -3 -1;0 4 1; -1 0 -3];
+B = [-2;7;2];
+
+answer = inv(A)*B;
+
+fprintf('\nx = %g \ny = %g \nz = %g\n',answer(1),answer(2),answer(3))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##### SOURCE END #####
+--></body></html>
