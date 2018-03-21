@@ -57,13 +57,13 @@ D
 clear all
 clc
 
-A = [7 4 1;-3 17 12;5 6 1];
+A = [7 4 1;-3 17 12;5 6 19];
 [row colm] = size(A);
 
 isSDDM = false;
 for i = 1:1:row
+    D = 0;
     for j = 1:1:colm
-        D = 0;
         if i ~= j 
             D = D + abs(A(i,j))
         end
