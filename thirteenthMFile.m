@@ -43,9 +43,9 @@ curMin
 
 DataSize = 2500;
 
-loopTimeArray = zeros(1,DataSize);
-functionTimeArray = zeros(1,DataSize);
-arrayLengthArray = zeros(1,DataSize);
+loopTimeArray = [];
+functionTimeArray = [];
+arrayLengthArray = [];
 for k = 1:1:DataSize
     arrayLength = k
     B = [];

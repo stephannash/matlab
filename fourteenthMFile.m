@@ -54,29 +54,60 @@ end
 D
 
 %% Strictly Diagonally dominant matrix
-clear all
-clc
 
-A = [7 4 1;-3 17 12;5 6 19];
+
+A = [7 3 -2;5 17 12;1 2 3];
 [row colm] = size(A);
 
-isSDDM = false;
+isSDDM = true;
 for i = 1:1:row
     D = 0;
     for j = 1:1:colm
         if i ~= j 
-            D = D + abs(A(i,j))
+            D = D + abs(A(i,j));
         end
     end
-    D
-    if abs(A(i,i)) > D
-        isSDDM = true;
-    else
+    if ~(abs(A(i,i)) > D)
         isSDDM = false;
     end
 end
 
 isSDDM
+
+
+%% Not strictly diagonally dominant matrix
+
+
+A = [7 3 -2;5 17 12;1 2 3];
+[row colm] = size(A);
+
+isDDM = true;
+for i = 1:1:row
+    D = 0;
+    for j = 1:1:colm
+        if i ~= j 
+            D = D + abs(A(i,j));
+        end
+    end
+    if ~(abs(A(i,i)) >= D)
+        isDDM = true;
+    end
+end
+isSDDM = false;
+for i = 1:1:row
+    D = 0;
+    for j = 1:1:colm
+        if i ~= j 
+            D = D + abs(A(i,j));
+        end
+    end
+    if abs(A(i,i)) > D
+        isSDDM = true;
+    end
+end
+
+isDDM = isDDM && isSDDM
+
 
 
 
