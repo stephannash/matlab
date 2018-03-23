@@ -1,0 +1,1 @@
+function[sorted] = arrayLoopSort(A)
