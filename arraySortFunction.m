@@ -18,13 +18,9 @@ else
         end
     end
     
-    f = parallel.FevalFuture(arraySortFunction(sorted1));
-    g = parallel.FevalFuture(arraySortFunction(sorted2));
-    wait(f)
-    wait(g)
-    sorted1 = fetchOutputs(f);
-    sorted2 = fetchOutputs(g);
-    
+
+    sorted1 = arraySortFunction(sorted1);
+    sorted1 = arraySortFunction(sorted2);   
     
     
     sl1 = length(sorted1);

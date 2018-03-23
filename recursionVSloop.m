@@ -3,13 +3,13 @@ clc
 
 
 
-DataSize = 5000;
+DataSize = 2500;
 
 loopTimeArray = zeros(1,DataSize);
 functionTimeArray = zeros(1,DataSize);
 arrayLengthArray = zeros(1,DataSize);
 for k = 1:1:DataSize
-    arrayLength = k;
+    arrayLength = k
     B = [];
     for i = 1:1:arrayLength
         B(i) = rand;
