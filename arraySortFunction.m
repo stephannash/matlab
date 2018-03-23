@@ -18,12 +18,12 @@ else
         end
     end
     
-    sorted1 = parallel.FevalFuture(arraySortFunction(sorted1));
-    sorted2 = parallel.FevalFuture(arraySortFunction(sorted2));
-    parallel.fetchOutputs
-    
-    %Broken
-    
+    f = parallel.FevalFuture(arraySortFunction(sorted1));
+    g = parallel.FevalFuture(arraySortFunction(sorted2));
+    wait(f)
+    wait(g)
+    sorted1 = fetchOutputs(f);
+    sorted2 = fetchOutputs(g);
     
     
     
