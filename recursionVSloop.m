@@ -3,11 +3,19 @@ clc
 
 
 
-DataSize = 2500;
+A=[1 5 2 4 3];
+B=[1 6 4 5 2 3];
+C = [1 3];
+arrayMergeSort(C)
+%arrayMergeSort(B)
 
-loopTimeArray = zeros(1,DataSize);
-functionTimeArray = zeros(1,DataSize);
-arrayLengthArray = zeros(1,DataSize);
+%{
+
+DataSize = 4;
+
+loopTimeArray = [];
+functionTimeArray = [];
+arrayLengthArray = [];
 for k = 1:1:DataSize
     arrayLength = k
     B = [];
@@ -16,28 +24,13 @@ for k = 1:1:DataSize
     end
 
     A = B;
+    
     tic
-    curMin = A(1);
-    newA = zeros(1,length(A));
-    while ~isempty(A)
-        curMin = A(1);
-        temp = 1;
-        for j = 1:1:length(A)
-            if curMin > A(j)
-                curMin = A(j);
-                temp = j;
-            end
-        end
-        newA = [newA curMin];
-        
-        A(temp) = [];
-    end
+    A = arrayLoopSort(A)
     loopTimeArray(k) = toc;
 
-    sorted = newA;
-
     tic
-    functionSorted = arraySortFunction(B);
+    B = arrayMergeSort(B)
     functionTimeArray(k) = toc;
     
     arrayLengthArray(k) = k;
@@ -54,4 +47,4 @@ legend('Function Sort', 'Loop Sort', 'location','northwest')
 xlabel('Array Size')
 ylabel('Time to Sort')
 ylim([0,0.1])
-
+%}
