@@ -103,7 +103,7 @@ Etop = 0;
 Ebot = 0;
 
 for i = 1:1:n
-    Etop = Etop + (stress(i) * strain(i));
+    Etop = Etop + (stress(i)*10^5 * strain(i));
 end
 
 for i = 1:1:n
@@ -111,8 +111,9 @@ for i = 1:1:n
 end
 
 E = Etop/Ebot;
+E = E/10^9;
 
-E
+fprintf('\nThe result for Young`s Modulus is %g GPa',E)
 
 
 

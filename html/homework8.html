@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>homework8</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-03-20"><meta name="DC.source" content="homework8.m"><style type="text/css">
+      --><title>homework8</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-03-25"><meta name="DC.source" content="homework8.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -68,7 +68,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
   </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">Question #1</a></li><li><a href="#3">Question #2</a></li><li><a href="#4">Question #3</a></li><li><a href="#5">Question #4</a></li></ul></div><pre class="codeinput">clear <span class="string">all</span>
 clc
-</pre><h2 id="2">Question #1</h2><pre class="codeinput">n = 6;
+</pre><h2>Question #1<a name="2"></a></h2><pre class="codeinput">n = 6;
 <span class="comment">%six numbers from 6 to 53</span>
 LS (1) = 5 + ceil(48*rand());
 i = 1;
@@ -94,9 +94,9 @@ LS
 </pre><pre class="codeoutput">
 LS =
 
-    49    12    36    10    19    32
+     7    19     8    10    45    39
 
-</pre><h2 id="3">Question #2</h2><pre class="codeinput">n = 6; <span class="comment">%size</span>
+</pre><h2>Question #2<a name="3"></a></h2><pre class="codeinput">n = 6; <span class="comment">%size</span>
 B=[];
 <span class="keyword">for</span> i = 1:1:n
     <span class="keyword">for</span> j = 1:1:n
@@ -118,7 +118,7 @@ B =
      0     0     0     0     1     0
      0     0     0     0     0     1
 
-</pre><h2 id="4">Question #3</h2><pre class="codeinput">A = [-3 4 7;9 11 -13;-17 19 -23;-29 31 37;39 41 47];
+</pre><h2>Question #3<a name="4"></a></h2><pre class="codeinput">A = [-3 4 7;9 11 -13;-17 19 -23;-29 31 37;39 41 47];
 [row,colm] = size(A);
 
 <span class="comment">%Put matrix into array</span>
@@ -173,7 +173,7 @@ A =
     19    31    37
     39    41    47
 
-</pre><h2 id="5">Question #4</h2><pre class="codeinput">stress= [19.1 22.81 187 284.2 344.3 417 495];
+</pre><h2>Question #4<a name="5"></a></h2><pre class="codeinput">stress= [19.1 22.81 187 284.2 344.3 417 495];
 strain = [.0001 .00012 .001 .0015 .0018 .0022 .0026];
 
 n = length(stress);
@@ -182,7 +182,7 @@ Etop = 0;
 Ebot = 0;
 
 <span class="keyword">for</span> i = 1:1:n
-    Etop = Etop + (stress(i) * strain(i));
+    Etop = Etop + (stress(i)*10^5 * strain(i));
 <span class="keyword">end</span>
 
 <span class="keyword">for</span> i = 1:1:n
@@ -190,14 +190,11 @@ Ebot = 0;
 <span class="keyword">end</span>
 
 E = Etop/Ebot;
+E = E/10^9;
 
-E
+fprintf(<span class="string">'\nThe result for Young`s Modulus is %g GPa'</span>,E)
 </pre><pre class="codeoutput">
-E =
-
-   1.9002e+05
-
-</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+The result for Young`s Modulus is 19.0019 GPa</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 clear all
 clc
@@ -304,7 +301,7 @@ Etop = 0;
 Ebot = 0;
 
 for i = 1:1:n
-    Etop = Etop + (stress(i) * strain(i));
+    Etop = Etop + (stress(i)*10^5 * strain(i));
 end
 
 for i = 1:1:n
@@ -312,8 +309,9 @@ for i = 1:1:n
 end
 
 E = Etop/Ebot;
+E = E/10^9;
 
-E
+fprintf('\nThe result for Young`s Modulus is %g GPa',E)
 
 
 
