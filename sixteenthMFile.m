@@ -30,9 +30,10 @@ a(1) = (B(1) - A(1,3)*a(3) - A(1,3)*a(2))/A(1,1)        % This one is wrong
 
 %% Automating that whole procress
 
-A = [25 5 1;64 8 1;144 12 1];
-B = [106.8;177.2;279.2];
-
+%A = [25 5 1 2;64 8 1 66.6;144 12 1 1234.5;14 556 13.3 75.3];
+%B = [106.8;177.2;279.2;55];
+A = [1 6 3;-2 1 5;3 4 -2];
+B = [42;23;15]
 
 [row, colm] = size(A);
 
@@ -54,7 +55,7 @@ for i=row:-1:1
    xValues(i) = xValues(i)/resultA(i, i);
    
 end
-xValues
+%xValues
 
 xValuesPP = zeros(row, 1 );
 for i=row:-1:1
@@ -68,7 +69,10 @@ for i=row:-1:1
    xValuesPP(i) = xValuesPP(i)/resultPPA(i, i);
    
 end
+gaussianElimination(A,B)
 xValuesPP
+
+
 
 
 
