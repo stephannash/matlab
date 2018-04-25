@@ -18,6 +18,7 @@ for i = 1:1:colm - 1
     temp = A(i,:);
     A(i,:) = A(maxRow,:);
     A(maxRow,:) = temp;
+    
     temp = B(i);
     B(i) = B(maxRow);
     B(maxRow) = temp;
@@ -28,10 +29,7 @@ for i = 1:1:colm - 1
         A(j,:) = A(j,:) - rowMult*A(i,:);  
         B(j) = B(j) - rowMult*B(i);
     end
-    
-    
-    
-    
+       
 end
 
 
