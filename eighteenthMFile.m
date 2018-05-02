@@ -22,26 +22,89 @@ for i = 1:1:n
     sumX2 = sumX2 + x(i)^2;
 end
 
-a = (n*sumXY - (sumX*sumY))/(n*sumX2 - sumX2)
+a = (n*sum(x.*y) - sum(x)*sum(y))/(n*sum(x.^2)-(sum(x))^2);
 
 b = mean(y) - a*mean(x)
 
 
-tt = [1:1:100];
+tt = [0:.1:2];
 
 syms t
-y = a*t + b;
+w = a*t + b;
 
-yy = subs(y,t,tt);
+yy = subs(w,t,tt);
 
-plot (tt,yy,x,y)
-    
-
+plot(tt,yy,x,y,'o')
 
 
+%% Linearized exponential model 
+clear all
+clc
+
+x = [0 1 3 5 7 9];
+y = [1 0.891 0.708 0.562 0.447 0.355];
+
+n = length(x);
+
+y1 = log(y);
+
+m = (n*sum(x.*y1) - sum(x)*sum(y1))/(n*sum(x.^2)-(sum(x))^2);
+
+c = mean(y1) - m*mean(x);
+
+
+tt = [0:1:10];
+
+syms t
+
+a = exp(c);
+b = m;
+w = a*exp(b*t);
+
+
+yy = subs(w,t,tt);
+
+plot(tt,yy,x,y,'o')
 
 
 
+%% Homework 12 stuff
+clear all
+clc
+
+
+t = [2 6 10 14 18];
+q = [260 189 120 78 75];
+
+n = length(t);
+x = [];
+
+for i =1:1:n
+    x(i) = t(i)*q(i);
+end
+
+
+a = -1*(n*sum(x.*q) - sum(x)*sum(q))/(n*sum(x.^2)-(sum(x))^2)
+
+b = (mean(q) + a*mean(x))
+
+
+
+tt = 0:0.1:18;
+
+syms g 
+
+qq = b/(1+ (a*g));
+
+qqq = subs(qq,g,tt);
+
+%plot(tt,qqq,t,q,'o')
+
+subsMyDude = double(subs(qq,g,344.0009))
+
+
+f = (367.9209-5)/(5*0.211)
+f/12
 
 
 
