@@ -16,17 +16,39 @@ index   x   y   z
 
 
 
-time = M(:,1);      %time is now in seconds
+time = M(:,1)./30;      %time is now in seconds
 
 x = M(:,2);
 y = M(:,3);
 z = M(:,4);
 
+%{
 figure(1)
-plot(time,x,time,y,time,z)
+plot(time,x)
 xlabel('Time')
 ylabel('Acceleration')
-legend('X-axis','Y-axis','Z-axis')
+
+%}
+
+% Integrating x vs time data
+
+intX(1) = 0;
+inc = time(2)- time(1);
+
+for i = 1:1:length(time) - 1
+    intX(i+1) = intX(i) + ((x(i) + x(i+1)) / 2) * inc;
+end
+
+
+
+
+figure(1)
+subplot(2,1,1)
+plot(time,x)
+title('acceleration')
+subplot(2,1,2)
+plot(time,intX)
+title('velocity')
 
 
 
